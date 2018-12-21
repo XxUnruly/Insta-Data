@@ -19,7 +19,7 @@ def recupAbos(username):
     page = requete.content
     soup = BeautifulSoup(page, "html.parser")
     p = soup.find_all('script')
-    data = str(p[3])
+    data = str(p[4])
     a = data.find('edge_followed_by":{"count":')
     b = data.find('edge_follow":{"count":')
     followed = find_data(data,a,'edge_followed_by":{"count":')
