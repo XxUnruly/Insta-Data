@@ -24,7 +24,10 @@ def recupAbos(username):
     b = data.find('edge_follow":{"count":')
     followed = find_data(data,a,'edge_followed_by":{"count":')
     follow = find_data(data,b,'edge_follow":{"count":')
-    return [int(followed),int(follow)]
+    try:
+        return [int(followed),int(follow)]
+    except:
+        print("Can't read data of instagram.com")
 
     
 def clcl_ratio(followers, following):
